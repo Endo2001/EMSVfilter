@@ -58,7 +58,7 @@ cd EMSVfilter
 python3 -m venv venv
 venv/bin/python3 -m pip install --upgrade pip
 venv/bin/python3 -m pip install -r requirements.txt
-wget best_dml_all.pth
+wget https://github.com/Endo2001/EMSVfilter/releases/download/0.1/best_dml_all.pth
 ```
 
 ### 実行
