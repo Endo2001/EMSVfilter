@@ -52,20 +52,35 @@ ImageNetで事前学習済みの
 
 ### インストール
 
+A. 直接インストール
+
 ```
 git clone https://github.com/Endo2001/EMSVfilter.git
 cd EMSVfilter
 python3 -m venv venv
 venv/bin/python3 -m pip install --upgrade pip
-venv/bin/python3 -m pip install -r requirements.txt
+venv/bin/python3 -m pip install torch torchvision timm pillow matplotlib numpy
 wget https://github.com/Endo2001/EMSVfilter/releases/download/0.1/best_dml_all.pth
+```
+
+B. Docker使用
+
+```
+docker pull c2997108/emsvfilter:0.1
 ```
 
 ### 実行
 
+A. 直接実行
+
 ```
-venv/bin/python3 EMSVfilter.py
+venv/bin/python3 EMSVfilter.py image_dir
 ```
 
+B. Docker使用
+
+```
+docker run -it --rm --gpus all EMSVfilter.py image_dir
+```
 
 
