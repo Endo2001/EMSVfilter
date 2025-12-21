@@ -1,6 +1,8 @@
 # EMSVfilter：IGVのスクリーンショットから構造変異を判定するAIツール
 EMSVfilterは、画像認識AIモデルがIntegrated Genomics Viewer (IGV) のスクリーンショットに構造変異が含まれるかどうかを判定する。  
 
+## 開発情報
+
 ### 性能
 IGVでコールされた場所(1225か所)のスクリーンショットから、構造変異の画像の100%、ノイズの画像の51%を正しく判定できた。
 <table>
@@ -45,5 +47,25 @@ ImageNetで事前学習済みの
 [Vision Transformer](https://huggingface.co/timm/vit_base_patch8_224.augreg_in21k)モデルをトレーニングデータで転移学習し、
 その後3つのモデルを相互学習して汎化性能を高めた。  
 さらにツールの判定のF1スコアを最大化するために、各モデルの判定の閾値を探索し、ResNet/Swin/ViT=0.7/0.075/0.975の閾値をデフォルトとした。
+
+## 使用方法
+
+### インストール
+
+```
+git clone
+cd EMSVfilter
+python3 -m venv venv
+venv/bin/python3 -m pip install --upgrade pip
+venv/bin/python3 -m pip install -r requirements.txt
+wget best_dml_all.pth
+```
+
+### 実行
+
+```
+venv/bin/python3 EMSVfilter.py
+```
+
 
 
