@@ -80,7 +80,7 @@ venv/bin/python3 EMSVfilter.py image_dir
 B. Docker使用
 
 ```
-docker run -it --rm --gpus all -v "$PWD:$PWD" -w "$PWD" c2997108/emsvfilter:0.1 EMSVfilter.py image_dir
+docker run -it --rm --gpus all -v "$PWD:$PWD" -w "$PWD" c2997108/emsvfilter:0.1 EMSVfilter.py image_dir > result.txt
 ```
 
 
