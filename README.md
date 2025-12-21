@@ -53,7 +53,7 @@ ImageNetで事前学習済みの
 ### インストール
 
 ```
-git clone
+git clone https://github.com/Endo2001/EMSVfilter.git
 cd EMSVfilter
 python3 -m venv venv
 venv/bin/python3 -m pip install --upgrade pip
