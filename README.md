@@ -74,7 +74,7 @@ docker pull c2997108/emsvfilter:0.1
 A. 直接実行
 
 ```
-venv/bin/python3 EMSVfilter.py image_dir
+venv/bin/python3 EMSVfilter.py image_dir > result.txt
 ```
 
 B. Docker使用
