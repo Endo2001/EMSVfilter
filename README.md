@@ -50,6 +50,8 @@ ImageNetで事前学習済みの
 
 ## 使用方法
 
+FASTQファイルからGATK-SVを使ってSVをコールするまでの一連の流れは[GATK-SV-SS](https://github.com/c2997108/gatk-sv-ss)を参照
+
 ### インストール
 
 A. 直接インストール
