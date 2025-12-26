@@ -100,7 +100,7 @@ def main():
 
     # Dataset
     transform = PairedTransform(image_size=args.image_size, augment=False)
-    ds = PairDiffDataset(root=args.data_root, classes=("noize", "signal"), transform=transform)
+    ds = PairDiffDataset(root=args.data_root, classes=("noise", "signal"), transform=transform)
     loader = DataLoader(ds, batch_size=args.batch_size, shuffle=False, num_workers=args.num_workers, pin_memory=True)
 
     # Model
