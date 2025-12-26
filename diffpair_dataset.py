@@ -40,7 +40,7 @@ def _pair_by_suffix(paths: Sequence[str]) -> List[Tuple[str, str]]:
 
 class PairDiffDataset(Dataset):
     """
-    Builds pairs within each class subfolder (signal/noize), matching
+    Builds pairs within each class subfolder (signal/noise), matching
     files that share the same suffix after `sample_` or `control_`.
     Returns an absolute difference image (3-channel) and label {0,1}.
     """
@@ -48,7 +48,7 @@ class PairDiffDataset(Dataset):
     def __init__(
         self,
         root: str,
-        classes: Sequence[str] = ("noize", "signal"),
+        classes: Sequence[str] = ("noise", "signal"),
         transform: Optional[Callable] = None,
         diff_mode: str = "abs",  # "abs" or "signed"
         limit_per_class: Optional[int] = None,
