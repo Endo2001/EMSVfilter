@@ -157,7 +157,7 @@ def main():
 
     # Dataset
     transform = PairedTransform(image_size=args.image_size, augment=False)
-    ds = PairDiffDataset(root=args.data_root, classes=("noize", "signal"), transform=transform)
+    ds = PairDiffDataset(root=args.data_root, classes=("noise", "signal"), transform=transform)
     loader = DataLoader(ds, batch_size=args.batch_size, shuffle=False, num_workers=args.num_workers, pin_memory=True)
 
     # Model
@@ -194,7 +194,7 @@ def main():
             suffix = base[len("control_"):]
         else:
             suffix = base
-        cls_name = "signal" if label == 1 else "noize"
+        cls_name = "signal" if label == 1 else "noise"
         out_path = out_dir / f"cam_{cls_name}_{suffix}"
         save_cam_overlay(x.squeeze(0).detach().cpu(), cam, out_path)
         saved += 1
