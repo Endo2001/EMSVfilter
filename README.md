@@ -31,10 +31,13 @@ IGVでコールされた場所(1225か所)のスクリーンショットから�
   </tbody>
 </table>
 
-### ツールの構成  
+### 動作概要
+フォルダを再帰走査し、`sample_*/control_*` のペアを抽出。  
 3つの画像認識モデル([ResNet](https://docs.pytorch.org/vision/stable/models/generated/torchvision.models.resnet50.html)、
 [Swin Transformer](https://huggingface.co/timm/swin_base_patch4_window7_224.ms_in1k)、
-[Vision Transformer](https://huggingface.co/timm/vit_base_patch8_224.augreg_in21k))が判定を出し、いずれか1つでもモデルの判定がPositiveならツールの判定はPositiveとなる。
+[Vision Transformer](https://huggingface.co/timm/vit_base_patch8_224.augreg_in21k))のsignal 確率を計算。  
+閾値判定を出し、いずれか1つでもモデルの判定がPositiveならツールの判定はPositiveとなる。  
+標準出力に判定が逐次表示。プログラム終了後に判定結果のTSVと詳細なJSON が出力される。
 
 ### モデルの学習方法  
 トレーニングデータ：ノイズ 796ペア、構造変異 300ペア  
