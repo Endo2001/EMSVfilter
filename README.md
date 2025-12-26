@@ -88,10 +88,3 @@ B. Docker使用
 docker run -it --rm --gpus all -v "$PWD:$PWD" -w "$PWD" c2997108/emsvfilter:0.1 EMSVfilter.py image_dir > result.txt
 ```
 
- オプション  
- ResNet/Swin Transformer/Vision Transformer の閾値を明示指定。  
- (指定しない場合はデフォルトの閾値ResNet/Swin/ViT=0.7/0.075/0.975が使用される)
-```
---thresholds t1 t2 t3
-```
-
